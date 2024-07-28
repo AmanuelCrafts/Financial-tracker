@@ -1,0 +1,283 @@
+/* Root variables for easy theming and maintenance */
+:root {
+  --primary-color: #ff6347; /* Changed from #3498db to Tomato */
+  --secondary-color: #ff4500; /* Changed from #2980b9 to OrangeRed */
+  --delete-color: #dc143c; /* Changed from #e74c3c to Crimson */
+  --delete-hover-color: #b22222; /* Changed from #c0392b to FireBrick */
+  --background-color: #f0f0f0; /* Changed from #f4f7fa to a slightly darker gray */
+  --text-color: #2c3e50; /* Changed from #333 to a darker blue-gray */
+  --white-color: #ffffff;
+  --border-radius: 12px; /* Changed from 8px to 12px */
+  --transition-duration: 0.3s;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly increased shadow intensity */
+}
+
+/* Global styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  color: var(--text-color);
+  text-align: center;
+  margin: 20px 0;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* App container */
+.app-container {
+  width: 80vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.dashboard-container {
+  width: 100%;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  background-color: var(--white-color);
+  border-bottom: var(--border-radius);
+  margin-bottom: 20px;
+}
+
+.form-container,
+.list-container {
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.button,
+.button-delete {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+  border: none;
+  font-size: 1rem;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-delete {
+  background-color: var(--delete-color);
+  color: var(--white-color);
+}
+
+.button-delete:hover {
+  background-color: var(--delete-hover-color);
+}
+
+/* Input styles */
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  transition: border-color var(--transition-duration);
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+/* Label styles */
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Navbar styles */
+.navbar {
+  margin-top: 20px;
+  background-color: var(--primary-color);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--white-color);
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.navbar a {
+  color: var(--white-color);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #e0e0e0;
+}
+
+.clerk-user-button {
+  background-color: transparent;
+  border: none;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.clerk-user-button:hover {
+  color: #e0e0e0;
+}
+
+/* Table styles */
+.table-container {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: var(--shadow);
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 16px;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #e8f4f8;
+}
+
+/* General button styles */
+button {
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color var(--transition-duration);
+}
+
+button:hover {
+  border-color: var(--primary-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.sign-in-container {
+  margin-top: 300px;
+}
+
+.sign-in-container button {
+  margin: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app-container {
+    width: 95vw;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+  }
+
+  .button,
+  .button-delete {
+    padding: 8px 15px;
+  }
+
+  .input {
+    padding: 8px;
+  }
+
+  .app-container {
+    width: 95vw;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    margin-left: 10px;
+  }
+
+  .button,
+  .button-delete {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .input {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
